@@ -21,26 +21,25 @@ use App\Http\Controllers\UbahprofilController;
 */
 
 Route::get('/', function () {
-    return view('user/profil');
+    return view('index');
 });
 
-Route::get('/profil', [ProfilController::class, 'index']
-);
+Route::get('/profil', [ProfilController::class, 'index'])->middleware('auth');
 
-Route::get('/lihatbarang', [LihatbarangController::class, 'index']
-);
+Route::get('/lihatbarang', [LihatbarangController::class, 'index'])->middleware('auth');
 
-Route::get('/peminjaman', [PeminjamanController::class, 'index']
-);
+Route::get('/peminjaman', [PeminjamanController::class, 'index'])->middleware('auth');
 
-Route::get('/riwayat', [RiwayatController::class, 'index']
-);
+Route::get('/riwayat', [RiwayatController::class, 'index'])->middleware('auth');
 
-Route::get('/ubahprofil', [UbahprofilController::class, 'index']
-);
+Route::get('/ubahprofil', [UbahprofilController::class, 'index'])->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index']
-);
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+
+Route::post('/login', [LoginController::class, 'auth']);
 
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::post('/logout', [LoginController::class, 'logout']);

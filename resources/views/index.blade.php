@@ -47,7 +47,7 @@
         <h2>Selamat Datang di</h2>
         <h1>BEMITORY</h1>
         <p>Situs Inventaris Barang milik BEM Fasilkom UNSIKA</p>
-        <a class="btn btn-success tombol" href="#" >Mulai Pinjam Barang</a>
+        <a class="btn btn-success tombol" href="/login" >Mulai Pinjam Barang</a>
       </div>
       <img class="col-lg-6" src="{{ asset('img/bg-landing.png') }}" alt="">
       </div>

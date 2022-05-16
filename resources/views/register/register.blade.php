@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="center">
+<div class="center mt-5">
     <img src="img/logo.png" alt="">  
     <h1>Registrasi</h1>
     <form action='/register' method="POST">
