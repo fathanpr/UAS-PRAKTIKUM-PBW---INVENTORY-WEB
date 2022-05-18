@@ -16,10 +16,14 @@
                     <img src="{{ asset('img/user.png') }}" alt="">
                 </span>
 
+                @auth
                 <div class="text logo-text">
-                    <span class="name">USERNAME</span>
+                    <span class="name">{{ auth()->user()->username }}</span>
                     <span class="profession">User</span>
                 </div>
+
+                @else
+                @endauth
             </div>
 
             <i class='bx bx-chevron-right toggle'></i>
@@ -66,11 +70,15 @@
                 </ul>
             </div> 
             <div class="bottom-content">
-                <li class="">
-                    <a href="#">
-                        <i class='bx bx-log-out icon' ></i>
+            <li class="">
+                <form action="/logout" method="post">
+                @csrf
+                    <button type="submit" style="background-color:#fff;">
+                    <a href="#" style="height:100px; width:500px;">
+                        <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
+                    </button>
                 </li>       
             </div>
         </div>
