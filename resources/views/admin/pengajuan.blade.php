@@ -25,6 +25,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($requests as $key => $data)
+                    <tr>
+                        <td>{{$data->id}}</td>
+                        <td>{{ auth()->user()->username }}</td>
+                        <td>{{$data->barang}}</td>
+                        <td>{{$data->jumlah}}</td>
+                        <td>{{$data->durasi}}</td>
+                        <td>{{$data->tanggal_pinjam}}</td>
+                        <td>
+                            <button type="button" class="btn btn-success">Setuju</button>
+                            <button type="button" class="btn btn-danger">Tolak</button>
+                        </td>
+                    </tr>
+                    @endforeach
                     <tr>
                         <td>1</td>
                         <td>fathan17</td>

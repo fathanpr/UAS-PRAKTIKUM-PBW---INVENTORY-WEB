@@ -89,22 +89,21 @@
         <div class="col-lg-6 editbarang">
             <h4>Edit Barang</h4>
             <hr>
-            <form>
+            <form action="{{ route('tambahbarang') }}" method="POST">
                 <fieldset disabled>
                     <label for="exampleInputEmail1" class="form-label">ID</label>
                     <div class="mb-3">
-                      <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                      <input type="text" name="idbarang" id="disabledTextInput" class="form-control" placeholder="">
                     </div>
                 </fieldset>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" name="barang" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Jumlah</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="jumlah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
-                  <button type="submit" class="btn btn-danger">Batal</button>
                 <button type="submit" class="btn btn-success">Simpan</button>
               </form>
         </div>

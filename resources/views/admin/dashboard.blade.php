@@ -20,7 +20,7 @@
         <img src="{{ asset('img/user.png') }}" alt="">
     </div>
     <div class="col-lg-2 text-overview">
-        <h3>5</h3>
+        <h3>1</h3>
         <h6>Admin Aktif</h6>
     </div>
 
