@@ -6,6 +6,8 @@ use App\Http\Controllers\DataBarangController;
 use App\Http\Controllers\DasborController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\DataPenggunaController;
+use App\Http\Controllers\EditBarangController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +36,7 @@ Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjama
 
 Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman');
 
-// Tampilkan Pengajuan User
+// Pengajuan User
 
 Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan');
 
@@ -46,6 +48,8 @@ Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambah
 
 Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang');
 
+// Route::get('editbarang/{id}',[DataBarangController::class,'editbarang'])->name('editbarang');
+
 //Dasbor Admin
 
 Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
@@ -55,3 +59,4 @@ Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
 Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datapengguna');
 
 Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');
+

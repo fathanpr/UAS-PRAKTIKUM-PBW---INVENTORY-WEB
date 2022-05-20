@@ -32,7 +32,7 @@
                         <td>{{ $item['durasi'] }}</td>
                         <td>{{ $item['tanggal_pinjam'] }}</td>
                         <td>
-                            <button type="button" class="btn btn-success">Setuju</button>
+                            <button type="button" class="btn btn-success">Setuju</button></a>
                             <button type="button" class="btn btn-danger">Tolak</button>
                         </td>
                     </tr>
