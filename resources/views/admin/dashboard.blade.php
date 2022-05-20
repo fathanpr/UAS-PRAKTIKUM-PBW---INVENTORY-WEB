@@ -12,7 +12,15 @@
         <img src="{{ asset('img/user.png') }}" alt="">
     </div>
     <div class="col-lg-2 text-overview">
-        <h3>78</h3>
+        <h3>
+            <?php
+            $row = DB::table('users')
+                ->get();
+            $count = sizeof($row);
+
+            echo $count
+            ?>
+        </h3>
         <h6>Pengguna Aktif</h6>
     </div>
 
@@ -28,7 +36,15 @@
         <img src="{{ asset('img/invent.png') }}" alt="">
     </div>
     <div class="col-lg-2 text-overview">
-        <h3>53</h3>
+        <h3>
+            <?php
+            $row = DB::table('databarang')
+                ->get();
+            $count = sizeof($row);
+
+            echo $count
+            ?>
+        </h3>
         <h6>Barang</h6>
     </div>
 </div>

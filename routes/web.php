@@ -5,6 +5,7 @@ use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\DataBarangController;
 use App\Http\Controllers\DasborController;
 use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\DataPenggunaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +47,7 @@ Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambah
 //Dasbor Admin
 
 Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
+
+// Tampilkan Data Pengguna
+
+Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datapengguna');

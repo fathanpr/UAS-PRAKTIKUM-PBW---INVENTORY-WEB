@@ -34,6 +34,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($users as $item)
+                    <tr>
+                        <td>{{$item['id']}}</td>
+                        <td>{{$item['name']}}</td>
+                        <td>{{$item['username']}}</td>
+                        <td>{{$item['email']}}</td>
+                        <td>{{$item['notelp']}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">Hapus</button>
+                        </td>
+                    </tr>
+                    @endforeach
                     <tr>
                         <td>1</td>
                         <td>Fathan</td>
