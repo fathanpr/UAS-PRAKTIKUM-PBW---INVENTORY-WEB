@@ -84,3 +84,7 @@ Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatba
 Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat');
 
 Route::get('/statusbarang',[StatusBarangController::class, 'index'])->name('statusbarang');
+
+// Setujui Pengajuan
+
+Route::get('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);

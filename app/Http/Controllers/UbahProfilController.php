@@ -8,7 +8,8 @@ use App\Models\User;
 class UbahProfilController extends Controller
 {
     public function index(){
-        return view('user.ubahprofil');
+        $users  = User::all();
+        return view('user.ubahprofil',compact('users'));
     }
 
     public function ubahprofil(Request $request, $username){

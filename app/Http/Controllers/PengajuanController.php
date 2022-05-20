@@ -14,7 +14,7 @@ class PengajuanController extends Controller
         return view('admin.pengajuan',compact('pengajuan'));
     }
 
-    public function terima($id) {
+    public function setuju($id) {
         PeminjamanModel::update("UPDATE peminjaman SET status='ongoing' WHERE id = ?", [$id]);
         return redirect('pengajuan');
     }

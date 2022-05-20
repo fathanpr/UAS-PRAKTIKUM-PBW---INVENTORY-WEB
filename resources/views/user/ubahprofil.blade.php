@@ -7,18 +7,19 @@
 <div class="profil">
     <div class="row">
         <div class="col-lg-5">
-            <form action="updateprofil/{{auth()->user()->username}}" method="POST">
+            <form action="updateprofil/{{$item['username']}}" method="POST">
+                @csrf
                 <h6>Nama</h6>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->name}}">
+                <input type="text" class="form-control" name="name" id="exampleInputEmail1" value="">
                 <br>
                 <h6>Username</h6>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->username}}" readonly>
+                <input type="text" class="form-control" name="username" id="exampleInputEmail1" value="{{auth()->user()->username}}" readonly>
                 <br>
                 <h6>Email</h6>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->email}}">
+                <input type="text" class="form-control" name="email" id="exampleInputEmail1" value="">
                 <br>
                 <h6>No Telp</h6>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->notelp}}">
+                <input type="text" class="form-control" name="notelp" id="exampleInputEmail1" value="">
                 <div class="submit-button">
                     <button type="submit" class="btn btn-success">Simpan</button>
                     <a href="/profil"><button type="button" class="btn btn-danger">Batalkan</button></a>
