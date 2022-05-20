@@ -7,7 +7,11 @@ use App\Http\Controllers\DasborController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\DataPenggunaController;
 use App\Http\Controllers\EditBarangController;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\UbahProfilController;
 use App\Http\Controllers\LihatBarangController;
+use App\Http\Controllers\RiwayatController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +33,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// Tampilkan Profil
+
+Route::get('/profil',[ProfilController::class,'index'])->name('profil');
+
+Route::get('/ubahprofil',[UbahProfilController::class,'index'])->name('ubahprofil');
+
+Route::post('/updateprofil/{username}', [UbahProfilController::class, 'ubahprofil'])->name('updateprofil');
 
 // Peminjaman Route
 
@@ -63,3 +75,7 @@ Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapus
 // Lihat Barang 
 
 Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatbarang');
+
+// Lihat Riwayat 
+
+Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat');

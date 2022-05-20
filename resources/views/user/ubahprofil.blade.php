@@ -7,20 +7,20 @@
 <div class="profil">
     <div class="row">
         <div class="col-lg-5">
-            <form action="">
+            <form action="updateprofil/{{auth()->user()->username}}" method="POST">
                 <h6>Nama</h6>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->name}}">
                 <br>
                 <h6>Username</h6>
-                <h4>Username123</h4>
+                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->username}}" readonly>
                 <br>
                 <h6>Email</h6>
-                <h4>email123@student.unsika.ac.id</h4>
+                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->email}}">
                 <br>
                 <h6>No Telp</h6>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->notelp}}">
                 <div class="submit-button">
-                    <button type="button" class="btn btn-success">Simpan</button>
+                    <button type="submit" class="btn btn-success">Simpan</button>
                     <a href="/profil"><button type="button" class="btn btn-danger">Batalkan</button></a>
                 </div>
             </form>

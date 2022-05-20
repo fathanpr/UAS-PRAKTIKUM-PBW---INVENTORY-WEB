@@ -8,17 +8,17 @@
     <div class="row">
         <div class="col-lg-2">
             <h6>Nama</h6>
-            <h4>User</h4>
+            <h4>{{auth()->user()->name}}</h4>
             <br>
             <h6>Username</h6>
-            <h4>Username123</h4>
+            <h4>{{auth()->user()->username}}</h4>
             <br>
             <h6>Email</h6>
-            <h4>email123@student.unsika.ac.id</h4>
+            <h4>{{auth()->user()->email}}</h4>
             <br>
             <h6>No Telp</h6>
-            <h4>08XXXXXXX</h4>
-            <a href="#"><button type="button" class="btn btn-success">Edit Profil</button></a>
+            <h4>{{auth()->user()->notelp}}</h4>
+            <a href="/ubahprofil"><button type="button" class="btn btn-success">Edit Profil</button></a>
         </div>
     </div>
 </div>
