@@ -30,7 +30,6 @@
                         <th>Jumlah (Dipinjam)</th>
                         <th>Durasi</th>
                         <th>Tanggal Pinjam</th>
-                        <th>Tanggal Pengembalian</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -41,7 +40,6 @@
                         <td>1</td>
                         <td>1 Hari</td>
                         <td>22/05/2022</td>
-                        <td>23/05/2022</td>
                         <td>Selesai</td>
                     </tr>
                 </tbody>

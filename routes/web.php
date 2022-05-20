@@ -44,6 +44,8 @@ Route::get('/databarang',[DataBarangController::class,'index'])->name('databaran
 
 Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambahbarang');
 
+Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang');
+
 //Dasbor Admin
 
 Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
@@ -51,3 +53,5 @@ Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
 // Tampilkan Data Pengguna
 
 Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datapengguna');
+
+Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');

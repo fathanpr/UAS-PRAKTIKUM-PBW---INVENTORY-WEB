@@ -18,4 +18,9 @@ class DataBarangController extends Controller
         DataBarangModel::create($data);
         return redirect()->route('databarang');
     }
+
+    public function destroy($id) {
+        DataBarangModel::destroy('DELETE FROM databarang WHERE id = ?', [$id]);
+        return redirect('databarang');
+    }
 }

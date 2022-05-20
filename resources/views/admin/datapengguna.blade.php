@@ -42,20 +42,10 @@
                         <td>{{$item['email']}}</td>
                         <td>{{$item['notelp']}}</td>
                         <td>
-                            <button type="button" class="btn btn-danger">Hapus</button>
+                            <a href='delete/{{$item['id']}}' type="button" class="btn btn-danger">Hapus</button>
                         </td>
                     </tr>
                     @endforeach
-                    <tr>
-                        <td>1</td>
-                        <td>Fathan</td>
-                        <td>fathan17</td>
-                        <td>fathan@student.unsika.ac.id</td>
-                        <td>08987335266</td>
-                        <td>
-                            <button type="button" class="btn btn-danger">Hapus</button>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>

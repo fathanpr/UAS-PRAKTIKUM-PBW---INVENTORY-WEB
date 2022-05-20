@@ -11,4 +11,9 @@ class DataPenggunaController extends Controller
         $users  = User::all();
         return view('admin.datapengguna',compact('users'));
     }
+
+    public function destroy($id) {
+        User::destroy('DELETE FROM users WHERE id = ?', [$id]);
+        return redirect('datapengguna');
+    }
 }

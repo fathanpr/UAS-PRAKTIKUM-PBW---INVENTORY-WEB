@@ -45,7 +45,7 @@
                                 <td>{{$item['status']}}</td>
                                 <td>
                                     <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                    <a href='deletebarang/{{$item['id']}}' type="button" class="btn btn-danger">Hapus</button>
                                 </td>
                             </tr>
                             @endforeach
