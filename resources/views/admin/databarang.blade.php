@@ -29,6 +29,7 @@
                     <table class=" table scroll table-striped">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Kode</th>
                                 <th>Barang</th>
                                 <th>Jumlah</th>
@@ -36,46 +37,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($databarang as $key => $data)
+                            <tr>
+                                <td>{{$data->idbarang}}</td>
+                                <td>{{$data->kode_barang}}</td>
+                                <td>{{$data->barang}}</td>
+                                <td>{{$data->jumlah}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-success">Edit</button>
+                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                </td>
+                            </tr>
+                            @endforeach
                             <tr>
                                 <td>A021</td>
                                 <td>Kamera</td>
                                 <td>12</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A022</td>
-                                <td>Tenda</td>
-                                <td>15</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A023</td>
-                                <td>Sound System</td>
-                                <td>3</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A024</td>
-                                <td>Spanduk</td>
-                                <td>6</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A025</td>
-                                <td>Laptop</td>
-                                <td>1</td>
                                 <td>
                                     <button type="button" class="btn btn-success">Edit</button>
                                     <button type="button" class="btn btn-danger">Hapus</button>
@@ -91,10 +68,11 @@
             <hr>
             <form action="{{ route('tambahbarang') }}" method="POST">
                 @csrf
+                @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Kode Barang</label>
                     <input type="text" name="kode_barang" class="form-control" id="exampleInputEmail1">
-                  </div>
+                </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
                   <input type="text" name="barang" class="form-control" id="exampleInputEmail1">

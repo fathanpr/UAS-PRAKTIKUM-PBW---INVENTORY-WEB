@@ -18,7 +18,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">USERNAME</span>
+                    <span class="name">{{ auth()->user()->name }}</span>
                     <span class="profession">User</span>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             </div> 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#" type="submit">
+                    <a href="logout" type="submit">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>

@@ -27,7 +27,7 @@
             <a class="nav-link active" aria-current="page" href="#hero">Beranda</a>
             <a class="nav-link" href="#about">Tentang</a>
             <a class="nav-link" href="#contactus">Hubungi Kami</a>
-            <a class="btn btn-success tombol" href="/login">Login</a>
+            <a class="btn btn-success tombol" href="/register">Daftar</a>
           </div>
         </div>
       </nav>
