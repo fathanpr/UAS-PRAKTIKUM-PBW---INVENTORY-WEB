@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('jumlah');
             $table->date('tanggal_pinjam');
             $table->integer('durasi');
+            $table->enum('status',['proses pengajuan','ditolak','ongoing','belum dikembalikan'])->default('proses pengajuan');
             $table->timestamps();
         });
     }

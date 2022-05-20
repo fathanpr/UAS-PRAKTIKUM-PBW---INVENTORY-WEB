@@ -15,6 +15,7 @@ class PeminjamanModel extends Model
         'barang',
         'jumlah',
         'tanggal_pinjam',
-        'durasi'
+        'durasi',
+        'status'
     ];
 }

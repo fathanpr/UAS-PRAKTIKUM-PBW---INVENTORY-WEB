@@ -29,7 +29,7 @@
                     <table class=" table scroll table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Kode</th>
                                 <th>Barang</th>
                                 <th>Jumlah</th>
                                 <th></th>
@@ -87,22 +87,21 @@
             </div>
         </div>
         <div class="col-lg-6 editbarang">
-            <h4>Edit Barang</h4>
+            <h4>Input Barang</h4>
             <hr>
             <form action="{{ route('tambahbarang') }}" method="POST">
-                <fieldset disabled>
-                    <label for="exampleInputEmail1" class="form-label">ID</label>
-                    <div class="mb-3">
-                      <input type="text" name="idbarang" id="disabledTextInput" class="form-control" placeholder="">
-                    </div>
-                </fieldset>
+                @csrf
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Kode Barang</label>
+                    <input type="text" name="kode_barang" class="form-control" id="exampleInputEmail1">
+                  </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
-                  <input type="text" name="barang" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" name="barang" class="form-control" id="exampleInputEmail1">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Jumlah</label>
-                    <input type="text" name="jumlah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="jumlah" class="form-control" id="exampleInputEmail1">
                   </div>
                 <button type="submit" class="btn btn-success">Simpan</button>
               </form>

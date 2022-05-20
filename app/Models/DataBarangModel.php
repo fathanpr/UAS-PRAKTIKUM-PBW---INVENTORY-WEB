@@ -9,8 +9,9 @@ class DataBarangModel extends Model
 {
     use HasFactory;
     protected $table = 'databarang';
+    
     protected $fillable = [
-        'idbarang',
+        'kode_barang',
         'barang',
         'jumlah',
         'status'
