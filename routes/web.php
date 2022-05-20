@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UbahProfilController;
 use App\Http\Controllers\LihatBarangController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\StatusBarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,48 +37,50 @@ require __DIR__.'/auth.php';
 
 // Tampilkan Profil
 
-Route::get('/profil',[ProfilController::class,'index'])->name('profil');
+Route::get('/profil',[ProfilController::class,'index'])->name('profil')->middleware(['auth']);
 
-Route::get('/ubahprofil',[UbahProfilController::class,'index'])->name('ubahprofil');
+Route::get('/ubahprofil',[UbahProfilController::class,'index'])->name('ubahprofil')->middleware(['auth']);
 
-Route::post('/updateprofil/{username}', [UbahProfilController::class, 'ubahprofil'])->name('updateprofil');
+Route::post('/updateprofil/{username}', [UbahProfilController::class, 'ubahprofil'])->name('updateprofil')->middleware(['auth']);
 
 // Peminjaman Route
 
-Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjaman');
+Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjaman')->middleware(['auth']);
 
-Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman');
+Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman')->middleware(['auth']);
 
 // Pengajuan User
 
-Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan');
+Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan')->middleware(['auth']);
 
 // Tampilkan Data Barang
 
-Route::get('/databarang',[DataBarangController::class,'index'])->name('databarang');
+Route::get('/databarang',[DataBarangController::class,'index'])->name('databarang')->middleware(['auth']);
 
 Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambahbarang');
 
-Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang');
+Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang')->middleware(['auth']);
 
-Route::get('/editbarang/{id}',[DataBarangController::class,'editbarang'])->name('editbarang');
+Route::get('/editbarang/{id}',[DataBarangController::class,'editbarang'])->name('editbarang')->middleware(['auth']);
 
 Route::post('/updatedata/{id}',[DataBarangController::class,'updatedata'])->name('updatedata');
 
 //Dasbor Admin
 
-Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
+Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor')->middleware(['auth']);
 
 // Tampilkan Data Pengguna
 
-Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datapengguna');
+Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datapengguna')->middleware(['auth']);
 
 Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');
 
 // Lihat Barang 
 
-Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatbarang');
+Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatbarang')->middleware(['auth']);
 
 // Lihat Riwayat 
 
 Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat');
+
+Route::get('/statusbarang',[StatusBarangController::class, 'index'])->name('statusbarang');

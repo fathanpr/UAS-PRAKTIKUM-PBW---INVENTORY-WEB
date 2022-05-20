@@ -34,14 +34,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $item)
                     <tr>
-                        <td>fathan17</td>
-                        <td>Kamera</td>
-                        <td>1</td>
-                        <td>1 Hari</td>
-                        <td>22/05/2022</td>
-                        <td>Selesai</td>
+                        <td>{{ $item['username'] }}</td>
+                        <td>{{ $item['barang'] }}</td>
+                        <td>{{ $item['jumlah'] }}</td>
+                        <td>{{ $item['durasi'] }}</td>
+                        <td>{{ $item['tanggal_pinjam'] }}</td>
+                        <td>{{ $item['status'] }}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

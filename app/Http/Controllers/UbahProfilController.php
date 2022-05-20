@@ -13,6 +13,7 @@ class UbahProfilController extends Controller
 
     public function ubahprofil(Request $request, $username){
         $data = User::find($username);
+        
         $data->update($request->all());
 
         return redirect()->route('profil')->with('success','Data berhasil diupdate'); 
