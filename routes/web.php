@@ -7,7 +7,7 @@ use App\Http\Controllers\DasborController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\DataPenggunaController;
 use App\Http\Controllers\EditBarangController;
-
+use App\Http\Controllers\LihatBarangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +60,6 @@ Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datap
 
 Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');
 
+// Lihat Barang 
+
+Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatbarang');

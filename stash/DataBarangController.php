@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class DataBarangController extends Controller
 {
+    // public function index(){
+
+    //     $data_barang  = DataBarangModel::all();
+    //     return view('admin.databarang',compact('data_barang'));
+    // }
+
     public function index(Request $request){
 
         if($request){
@@ -26,10 +32,5 @@ class DataBarangController extends Controller
     public function destroy($id) {
         DataBarangModel::destroy('DELETE FROM databarang WHERE id = ?', [$id]);
         return redirect('databarang');
-    }
-    
-    public function editbarang($id){
-        $data = DataBarangModel::find($id);
-        return redirect()->route('editbarang',compact('data'));
     }
 }

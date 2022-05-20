@@ -5,53 +5,37 @@
 <h1>Lihat Barang</h1>
             <hr>
 
-            <div class="table">
-                <div class="table_header">
-                    <div>
-
+            <div class="row">
+                <div class="d-flex justify-content-end">
+                    <div class="col-lg-4">
+                    <form action="{{ route('lihatbarang') }}" method="GET">
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Cari Barang..." name="search">
+                            <button type="submit" class="btn btn-success"><i class='bx bx-search-alt-2 icon'></i></button>
+                        </div>
+                    </form>
                     </div>
                 </div>
+            </div>
                 <div class="table_section">
                     <table class=" table scroll table-striped">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Nama Barang</th>
+                                <th>Kode Barang</th>
+                                <th>Barang</th>
                                 <th>Jumlah</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($data_barang as $item)
                             <tr>
-                                <td>1</td>
-                                <td>Kamera</td>
-                                <td>3</td>
-                                <td>Tersedia</td>
+                                <td>{{ $item['kode_barang'] }}</td>
+                                <td>{{ $item['barang'] }}</td>
+                                <td>{{ $item['jumlah'] }}</td>
+                                <td>{{ $item['status'] }}</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>HT</td>
-                                <td>8</td>
-                                <td>Tidak Tersedia</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Sound System</td>
-                                <td>2</td>
-                                <td>Tersedia</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Bendera Merah Putih</td>
-                                <td>1</td>
-                                <td>Tersedia</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Tenda</td>
-                                <td>4</td>
-                                <td>Tersedia</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeminjamanController;
-
+use App\Http\Controllers\DataBarangController;
+use App\Http\Controllers\DasborController;
+use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\DataPenggunaController;
+use App\Http\Controllers\LihatBarangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +19,7 @@ use App\Http\Controllers\PeminjamanController;
 */
 
 Route::get('/', function () {
-    return view('user.ubahprofil');
+    return view('index');
 });
 
 // Login Logout Route
@@ -30,3 +34,29 @@ require __DIR__.'/auth.php';
 Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjaman');
 
 Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman');
+
+// Tampilkan Pengajuan User
+
+Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan');
+
+// Tampilkan Data Barang
+
+Route::get('/databarang',[DataBarangController::class,'index'])->name('databarang');
+
+Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambahbarang');
+
+Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang');
+
+//Dasbor Admin
+
+Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');
+
+// Tampilkan Data Pengguna
+
+Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datapengguna');
+
+Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');
+
+// Lihat Barang 
+
+Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatbarang');
