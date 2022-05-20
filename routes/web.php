@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\DataBarangController;
 use App\Http\Controllers\DasborController;
-
+use App\Http\Controllers\PengajuanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,30 +33,16 @@ Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjama
 
 Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman');
 
-// Tambah Barang Route
-
-Route::get('/databarang', function(){
-    $users = DB::table('databarang')->get();
-
-    return view('admin/databarang', ['databarang' => $databarang]);
-})->name('databarang');
-
-Route::post('/tambahbarang', [DataBarangController::class, 'store'])->name('tambahbarang');
-
 // Tampilkan Pengajuan User
 
-Route::get('/pengajuan', function(){
-    $users = DB::table('peminjaman')->get();
-
-    return view('admin/pengajuan', ['peminjaman' => $requests]);
-});
+Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan');
 
 // Tampilkan Data Barang
-Route::get('/lihatbarang', function(){
-    $users = DB::table('databarang')->get();
 
-    return view('user/lihatbarang', ['databarang' => $databarang]);
-})->name('lihatbarang');
+Route::get('/databarang',[DataBarangController::class,'index'])->name('databarang');
+
+Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambahbarang');
 
 //Dasbor Admin
+
 Route::get('/dasbor',[DasborController::class,'index'])->name('dasbor');

@@ -18,7 +18,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">{{ auth()->user()->name }}</span>
+                    <span class="name">{{ auth()->user()->username }}</span>
                     <span class="profession">User</span>
                 </div>
             </div>

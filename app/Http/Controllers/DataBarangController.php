@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class DataBarangController extends Controller
 {
     public function index(){
-        return view('admin.databarang');
+
+        $data_barang  = DataBarangModel::all();
+        return view('admin.databarang',compact('data_barang'));
     }
 
     public function store(Request $request){

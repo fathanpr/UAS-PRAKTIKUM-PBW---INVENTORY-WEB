@@ -32,24 +32,21 @@
                                 <th>Kode</th>
                                 <th>Barang</th>
                                 <th>Jumlah</th>
-                                <th>Status</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data_barang as $item)
-                            <tr>
-                                <td>{{$item['kode_barang']}}</td>
-                                <td>{{$item['barang']}}</td>
-                                <td>{{$item['jumlah']}}</td>
-                                <td>{{$item['status']}}</td>
-                                <td>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $item['kode_barang'] }}</td>
+                                    <td>{{ $item['barang'] }}</td>
+                                    <td>{{ $item['jumlah'] }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success">Edit</button>
+                                        <button type="button" class="btn btn-danger">Hapus</button>
+                                    </td>
+                                </tr>
                             @endforeach
-                            
                         </tbody>
                     </table>
                 </div>
@@ -60,11 +57,10 @@
             <hr>
             <form action="{{ route('tambahbarang') }}" method="POST">
                 @csrf
-                @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Kode Barang</label>
                     <input type="text" name="kode_barang" class="form-control" id="exampleInputEmail1">
-                </div>
+                  </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
                   <input type="text" name="barang" class="form-control" id="exampleInputEmail1">

@@ -9,14 +9,20 @@
                 <form action="{{ route('ajukanpeminjaman') }}" method="POST">
                     @csrf
                     <div class="row">
+                        <div class="col-lg-12">
+                            <label for="">Username</label>
+                            <div class="col-lg">
+                                <input class="form-control" type="text" value="{{ auth()->user()->username }}" name="username" readonly>
+                                </div>
+                            </div>
                         <div class="col-lg-6">
                           <label for="">Nama Barang</label>
                           <div class="form-floating">
                               <select class="form-select" id="floatingSelect" name="barang">
                                 <option selected>Laptop</option>
-                                <option value="1">Kamera</option>
-                                <option value="2">Tenda</option>
-                                <option value="3">HT</option>
+                                <option value="Kamera">Kamera</option>
+                                <option value="Tenda">Tenda</option>
+                                <option value="HT">HT</option>
                               </select>
                             </div>
                         </div>
@@ -25,9 +31,9 @@
                                 <div class="form-floating">
                                     <select class="form-select" id="floatingSelect" name="jumlah">
                                       <option selected>1</option>
-                                      <option value="1">2</option>
-                                      <option value="2">3</option>
-                                      <option value="3">4</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
                                     </select>
                                   </div>
                             </div>
