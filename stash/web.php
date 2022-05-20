@@ -6,6 +6,7 @@ use App\Http\Controllers\DataBarangController;
 use App\Http\Controllers\DasborController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\DataPenggunaController;
+use App\Http\Controllers\EditBarangController;
 use App\Http\Controllers\LihatBarangController;
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjama
 
 Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman');
 
-// Tampilkan Pengajuan User
+// Pengajuan User
 
 Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan');
 
@@ -46,6 +47,11 @@ Route::get('/databarang',[DataBarangController::class,'index'])->name('databaran
 Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambahbarang');
 
 Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang');
+
+Route::get('/editbarang/{id}',[DataBarangController::class,'editbarang'])->name('editbarang');
+
+Route::post('/updatedata/{id}',[DataBarangController::class,'updatedata'])->name('updatedata');
+
 
 //Dasbor Admin
 

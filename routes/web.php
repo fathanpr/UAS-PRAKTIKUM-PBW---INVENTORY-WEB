@@ -60,7 +60,9 @@ Route::post('/tambahbarang',[DataBarangController::class,'store'])->name('tambah
 
 Route::get('deletebarang/{kode_barang}',[DataBarangController::class,'destroy'])->name('hapusbarang');
 
-// Route::get('editbarang/{id}',[DataBarangController::class,'editbarang'])->name('editbarang');
+Route::get('/editbarang/{id}',[DataBarangController::class,'editbarang'])->name('editbarang');
+
+Route::post('/updatedata/{id}',[DataBarangController::class,'updatedata'])->name('updatedata');
 
 //Dasbor Admin
 

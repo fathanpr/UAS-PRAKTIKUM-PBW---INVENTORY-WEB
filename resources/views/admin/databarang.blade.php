@@ -44,7 +44,7 @@
                                 <td>{{$item['jumlah']}}</td>
                                 <td>{{$item['status']}}</td>
                                 <td>
-                                    <a href='editbarang/{{$item['id']}}' type="button" class="btn btn-success">Edit</button></a>
+                                    <a href='/editbarang/{{$item['id']}}' type="button" class="btn btn-success">Edit</button></a>
                                     <a href='deletebarang/{{$item['id']}}' type="button" class="btn btn-danger">Hapus</button></a>
                                 </td>
                             </tr>

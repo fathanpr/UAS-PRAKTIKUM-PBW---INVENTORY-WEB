@@ -9,7 +9,7 @@
         <div class="col-lg-6 editbarang">
             <h4>Edit Barang</h4>
             <hr>
-            <form action="" method="POST">
+            <form action="/updatedata/{{ $data->id }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Kode Barang</label>

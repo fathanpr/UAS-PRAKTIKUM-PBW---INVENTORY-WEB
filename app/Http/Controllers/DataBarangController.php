@@ -30,6 +30,15 @@ class DataBarangController extends Controller
     
     public function editbarang($id){
         $data = DataBarangModel::find($id);
-        return redirect()->route('editbarang',compact('data'));
+        return view('admin.editbarang',compact('data'));
+    }
+
+    public function updatedata(Request $request,$id){
+
+        $data = DataBarangModel::find($id);
+
+        $data->update($request->all());
+
+        return redirect()->route('databarang')->with('succes','Update Data Berhasil');
     }
 }
