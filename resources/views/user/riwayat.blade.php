@@ -28,7 +28,7 @@
                         <td>{{ $item['tanggal_pinjam'] }}</td>
                         <td>{{ $item['status'] }}</td>
                         <td>
-                            <a href='' type="button" class="btn btn-success">Cetak</button></a>
+                            <a href="/riwayat/downloadpf/{{ $item['id'] }}" type="button" class="btn btn-success">Cetak</button></a>
                         </td>
                     </tr>
                     @endforeach

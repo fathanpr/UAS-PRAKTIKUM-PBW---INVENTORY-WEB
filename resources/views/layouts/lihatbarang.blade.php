@@ -19,7 +19,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">USERNAME</span>
+                    <span class="name">{{ auth()->user()->username }}</span>
                     <span class="profession">User</span>
                 </div>
             </div>

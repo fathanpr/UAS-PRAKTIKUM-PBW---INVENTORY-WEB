@@ -84,3 +84,7 @@ Route::get('/statusbarang',[StatusBarangController::class, 'index'])->name('stat
 // Setujui Pengajuan
 
 Route::get('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
+
+// Export PDF
+
+Route::get('/riwayat/downloadpf/{id}',[RiwayatController::class,'exportpdf'])->name('exportpdf');
