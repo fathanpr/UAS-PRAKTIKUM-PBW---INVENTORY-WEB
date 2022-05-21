@@ -15,8 +15,13 @@ class PengajuanController extends Controller
     }
 
     public function setuju($id) {
-        PeminjamanModel::update("UPDATE peminjaman SET status='ongoing' WHERE id = ?", [$id]);
-        return redirect('pengajuan');
+        PeminjamanModel::find($id)->update(['status' => 'ongoing']);
+        return redirect('/pengajuan');
+    }
+
+    public function tolak($id) {
+        PeminjamanModel::find($id)->update(['status' => 'ditolak']);
+        return redirect('/pengajuan');
     }
     
 }

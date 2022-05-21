@@ -49,6 +49,10 @@ Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('
 
 Route::get('/pengajuan', [PengajuanController::class,'index'])->name('pengajuan')->middleware(['auth']);
 
+Route::post('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
+
+Route::post('/tolak/{id}',[PengajuanController::class,'tolak'])->name('tolak')->middleware(['auth']);
+
 // Tampilkan Data Barang
 
 Route::get('/databarang',[DataBarangController::class,'index'])->name('databarang')->middleware(['auth']);
@@ -80,10 +84,6 @@ Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatba
 Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat');
 
 Route::get('/statusbarang',[StatusBarangController::class, 'index'])->name('statusbarang');
-
-// Setujui Pengajuan
-
-Route::get('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
 
 // Export PDF
 

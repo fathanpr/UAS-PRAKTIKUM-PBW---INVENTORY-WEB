@@ -20,6 +20,7 @@
                         <th>JUMLAH YANG DIAJUKAN</th>
                         <th>DURASI PEMINJAMAN</th>
                         <th>TANGGAL PEMINJAMAN</th>
+                        <th>STATUS</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
@@ -31,9 +32,16 @@
                         <td>{{ $item['jumlah'] }}</td>
                         <td>{{ $item['durasi'] }}</td>
                         <td>{{ $item['tanggal_pinjam'] }}</td>
+                        <td>{{ $item['status'] }}</td>
                         <td>
-                            <a href="/setuju/{{$item['id']}}" type="button" class="btn btn-success">Setuju</button></a>
-                            <button type="button" class="btn btn-danger">Tolak</button>
+                            <form action="/setuju/{{$item['id']}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Setuju</button>
+                            </form>
+                            <form action="/tolak/{{$item['id']}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-danger"> Tolak </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

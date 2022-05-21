@@ -87,15 +87,15 @@
       <div class="row justify-content-center hubungi-panel">
 
         <div class="col-4 hubungi">
-          <a href="https://web.whatsapp.com" target="_blank"><img class="gambar" src="{{ asset('img/whatsapp.svg') }}" alt=""></a>
+          <a href="https://wa.wizard.id/99b3f0" target="_blank"><img class="gambar" src="{{ asset('img/whatsapp.svg') }}" alt=""></a>
         </div>
 
         <div class="col-4 hubungi">
-          <a href="https://www.google.com/intl/id/gmail/about/" target="_blank"><img class="gambar" src="{{ asset('img/gmail2.svg') }}" alt=""></a>
+          <a href="https://mail.google.com/mail/u/0/#compose" target="_blank"><img class="gambar" src="{{ asset('img/gmail2.svg') }}" alt=""></a>
         </div>
 
         <div class="col-4 hubungi">
-          <a href="https://web.telegram.org/k/" target="_blank"><img class="gambar" src="{{ asset('img/telegram.svg') }}" alt=""></a>
+          <a href="t.me/hagiazzam" target="_blank"><img class="gambar" src="{{ asset('img/telegram.svg') }}" alt=""></a>
         </div>
 
       </div>
