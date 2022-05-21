@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="">
-                <img src= "img/logo.png" style="margin: 0 auto; width:40%" />
+                <img src= "img/logo.png" style="margin: 0 auto; width:40%; margin-top:20px;" />
             </a>
         </x-slot>
 
@@ -14,9 +14,16 @@
 
             <!-- Name -->
             <div>
+                <x-label for="name" :value="__('Name')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus /><br>
+            </div>
+
+            <!-- Username -->
+            <div>
                 <x-label for="name" :value="__('Username')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="username" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
             </div>
 
             <!-- Email Address -->
@@ -24,6 +31,13 @@
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- No Telp -->
+            <div class="mt-4">
+                <x-label for="email" :value="__('Nomor Telepon')" />
+
+                <x-input id="email" class="block mt-1 w-full" type="text" name="notelp" :value="old('email')" required />
             </div>
 
             <!-- Password -->

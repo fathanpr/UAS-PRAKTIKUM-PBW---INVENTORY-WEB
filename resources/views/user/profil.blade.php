@@ -18,7 +18,6 @@
             <br>
             <h6>No Telp</h6>
             <h4>{{auth()->user()->notelp}}</h4>
-            <a href="/ubahprofil"><button type="button" class="btn btn-success">Edit Profil</button></a>
         </div>
     </div>
 </div>

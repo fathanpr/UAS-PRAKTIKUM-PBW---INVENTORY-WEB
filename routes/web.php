@@ -39,10 +39,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/profil',[ProfilController::class,'index'])->name('profil')->middleware(['auth']);
 
-Route::get('/ubahprofil',[UbahProfilController::class,'index'])->name('ubahprofil')->middleware(['auth']);
-
-Route::post('/updateprofil/{username}', [UbahProfilController::class, 'ubahprofil'])->name('updateprofil')->middleware(['auth']);
-
 // Peminjaman Route
 
 Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjaman')->middleware(['auth']);
