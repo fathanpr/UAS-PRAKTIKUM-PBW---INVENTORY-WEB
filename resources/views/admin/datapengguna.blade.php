@@ -42,7 +42,16 @@
                         <td>{{$item['email']}}</td>
                         <td>{{$item['notelp']}}</td>
                         <td>
-                            <a href='delete/{{$item['id']}}' type="button" class="btn btn-danger">Hapus</button>
+                            <a href='delete/{{$item['id']}}' type="button" class="btn btn-danger
+                            <?php
+                                if($item['level'] == "user"){
+                                    echo "";
+                                }
+                                else {
+                                    echo " disabled";
+                                }
+                            ?>
+                            ">Hapus</button>
                         </td>
                     </tr>
                     @endforeach
