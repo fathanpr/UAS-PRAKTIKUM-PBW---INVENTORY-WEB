@@ -15,6 +15,7 @@
         <h3>
             <?php
             $row = DB::table('users')
+                ->where('level','user')
                 ->get();
             $count = sizeof($row);
 
@@ -28,7 +29,16 @@
         <img src="{{ asset('img/user.png') }}" alt="">
     </div>
     <div class="col-lg-2 text-overview">
-        <h3>1</h3>
+        <h3>
+            <?php
+            $row = DB::table('users')
+                ->where('level','admin')
+                ->get();
+            $count = sizeof($row);
+
+            echo $count
+            ?>
+        </h3>
         <h6>Admin Aktif</h6>
     </div>
 

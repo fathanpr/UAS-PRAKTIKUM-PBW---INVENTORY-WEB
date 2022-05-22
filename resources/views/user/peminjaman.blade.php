@@ -32,7 +32,7 @@
                                     <select class="form-select" id="floatingSelect" name="jumlah">
                                         <option selected>Pilih Jumlah</option>
                                         <?php 
-                                            for ($x = 1; $x <= 50; $x++) {
+                                            for ($x = 1; $x <= 5; $x++) {
                                             echo "<option value=$x>$x</option>";
                                             }
                                         ?>
