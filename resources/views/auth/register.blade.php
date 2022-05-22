@@ -37,7 +37,7 @@
             <div class="mt-4">
                 <x-label for="email" :value="__('Nomor Telepon')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="text" name="notelp" :value="old('email')" required />
+                <x-input id="email" class="block mt-1 w-full" type="text" name="notelp" :value="old('notelp')" required />
             </div>
 
             <!-- Password -->

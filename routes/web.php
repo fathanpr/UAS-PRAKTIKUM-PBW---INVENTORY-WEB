@@ -57,7 +57,9 @@ Route::group(['middleware' => ['auth','ceklevel:admin']],function(){
     Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');
 
     // Setujui Pengajuan
-    Route::get('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
+    Route::post('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
+    // Ditolak Pengajuan
+    Route::post('/tolak/{id}',[PengajuanController::class,'tolak'])->name('tolak')->middleware(['auth']);
 
 });
 
