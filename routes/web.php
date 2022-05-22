@@ -35,6 +35,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
+
 Route::group(['middleware' => ['auth','ceklevel:admin']],function(){
 
 // Pengajuan User

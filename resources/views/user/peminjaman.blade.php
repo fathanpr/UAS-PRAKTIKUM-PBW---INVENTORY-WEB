@@ -19,10 +19,10 @@
                           <label for="">Nama Barang</label>
                           <div class="form-floating">
                               <select class="form-select" id="floatingSelect" name="barang">
-                                <option selected>Laptop</option>
-                                <option value="Kamera">Kamera</option>
-                                <option value="Tenda">Tenda</option>
-                                <option value="HT">HT</option>
+                                <option selected>Pilih Barang</option>
+                                @foreach ($items as $item)                                
+                                <option value="{{$item['barang']}}">{{$item['barang']}}</option>
+                                @endforeach
                               </select>
                             </div>
                         </div>
@@ -30,10 +30,12 @@
                                 <label for="">Jumlah</label>
                                 <div class="form-floating">
                                     <select class="form-select" id="floatingSelect" name="jumlah">
-                                      <option selected>1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                      <option value="4">4</option>
+                                        <option selected>Pilih Jumlah</option>
+                                        <?php 
+                                            for ($x = 1; $x <= 50; $x++) {
+                                            echo "<option value=$x>$x</option>";
+                                            }
+                                        ?>
                                     </select>
                                   </div>
                             </div>

@@ -28,7 +28,16 @@
                         <td>{{ $item['tanggal_pinjam'] }}</td>
                         <td>{{ $item['status'] }}</td>
                         <td>
-                            <a href="/riwayat/downloadpf/{{ $item['id'] }}" type="button" class="btn btn-success">Cetak</button></a>
+                            <a href="/riwayat/downloadpf/{{ $item['id'] }}" type="button" class="btn btn-success
+                            <?php
+                                if($item['status'] == "ongoing"){
+                                    echo "";
+                                }
+                                else {
+                                    echo " disabled";
+                                }
+                            ?>
+                            ">Cetak</button></a>
                         </td>
                     </tr>
                     @endforeach
