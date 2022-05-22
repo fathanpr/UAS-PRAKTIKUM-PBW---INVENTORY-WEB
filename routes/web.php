@@ -35,15 +35,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-// Tampilkan Profil
-
-Route::get('/profil',[ProfilController::class,'index'])->name('profil')->middleware(['auth']);
-
-// Peminjaman Route
-
-Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjaman')->middleware(['auth']);
-
-Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman')->middleware(['auth']);
+Route::group(['middleware' => ['auth','ceklevel:admin']],function(){
 
 // Pengajuan User
 
@@ -71,6 +63,22 @@ Route::get('/datapengguna',[DataPenggunaController::class,'index'])->name('datap
 
 Route::get('delete/{id}',[DataPenggunaController::class,'destroy'])->name('hapususer');
 
+
+// Setujui Pengajuan
+
+Route::get('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
+
+});
+
+
+Route::group(['middleware' => ['auth','ceklevel:user,admin']],function(){
+
+// Peminjaman Route
+
+Route::get('/peminjaman',[PeminjamanController::class,'index'])->name('peminjaman')->middleware(['auth']);
+
+Route::post('/ajukanpeminjaman', [PeminjamanController::class, 'store'])->name('ajukanpeminjaman')->middleware(['auth']);
+
 // Lihat Barang 
 
 Route::get('/lihatbarang',[LihatBarangController::class,'index'])->name('lihatbarang')->middleware(['auth']);
@@ -81,10 +89,12 @@ Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat');
 
 Route::get('/statusbarang',[StatusBarangController::class, 'index'])->name('statusbarang');
 
-// Setujui Pengajuan
+// Tampilkan Profil
 
-Route::get('/setuju/{id}',[PengajuanController::class,'setuju'])->name('setuju')->middleware(['auth']);
+Route::get('/profil',[ProfilController::class,'index'])->name('profil')->middleware(['auth']);
 
 // Export PDF
 
 Route::get('/riwayat/downloadpf/{id}',[RiwayatController::class,'exportpdf'])->name('exportpdf');
+
+});

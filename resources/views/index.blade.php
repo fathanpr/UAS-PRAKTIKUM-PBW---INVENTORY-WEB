@@ -91,7 +91,7 @@
         </div>
 
         <div class="col-4 hubungi">
-          <a href="https://www.google.com/intl/id/gmail/about/" target="_blank"><img class="gambar" src="{{ asset('img/gmail2.svg') }}" alt=""></a>
+          <a href="mailto:hagiazzam@gmail.com?Subject=Bemitory" target="_blank"><img class="gambar" src="{{ asset('img/gmail2.svg') }}" alt=""></a>
         </div>
 
         <div class="col-4 hubungi">
